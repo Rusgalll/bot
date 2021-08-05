@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+    
+    <title>Document</title>
+</head>
+<body>
+    <a onclick="alert('Привет, тебе нужно угадать число от 1 до 100, давай начнем игру :)') // приветсвуем пользователя
+
+    let game = function(){ // задаем функцию нашей игры
+        let number=50; // задаем число, которое нужно угадать
+    let call = function(){ // функция всплывающего окна с вопросом и проверкой
+        let question = prompt('Угадай число от 1 до 100'); // переменная хранящая введеный результат
+        if(question==null){ // сообщение при нажатие на отмену
+            return alert('Игра окончена');
+        }
+        else if (isNaN(parseFloat(question))==true){ // проверка что введено число, а не строка (в том числе пустая строка с пробелами)
+            return alert('Долбоеб, введи число'), call();
+        }
+        else{
+        if(+question===number){ // проверка резульата когда угадал
+           return alert('Поздравляю, Вы угадали!!!'); // конец игры
+            
+    
+        }else if(+question>number){ // проверка когда ввел больше
+            return alert('Загаданное число меньше'), // сообщение с подсказкой
+            call(); // заново вызываем функцию внутри себя
+        }else if(+question<number){ // проверка когда ввел меньше
+            return alert('Загаданное число больше'), // сообщение с подсказкой
+            call(); // // заново вызываем функцию внутри себя
+        }
+    }
+       return +prompt('Угадай число от 1 до 100'); // что возвращает функция вызывая саму себя
+    };
+    call() // вызываем всплывающие окно внутри функции игры
+    
+    
+    
+    };
+    game();"href="" id="border_button">Button</a>
+    
+</body>
+</html>
